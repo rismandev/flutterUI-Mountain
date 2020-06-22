@@ -17,30 +17,36 @@ class _DetailScreenState extends State<DetailScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        children: <Widget>[
-          HeaderDetail(
-            image: "assets/images/detail.png",
-            onBackPress: () {
-              Navigator.pop(context);
-            },
-            onLikePress: () {
-              setState(() {
-                isLike = !this.isLike;
-              });
-            },
-            isLike: this.isLike,
+      body: SingleChildScrollView(
+        child: Container(
+          width: size.width,
+          height: size.height,
+          child: Column(
+            children: <Widget>[
+              HeaderDetail(
+                image: "assets/images/detail.png",
+                onBackPress: () {
+                  Navigator.pop(context);
+                },
+                onLikePress: () {
+                  setState(() {
+                    isLike = !this.isLike;
+                  });
+                },
+                isLike: this.isLike,
+              ),
+              ContentDetail(
+                title: "Gunung Ciremai",
+                location: "Jawa Barat, Indonesia",
+                description: descriptionText,
+                price: 75,
+                onPress: () {
+                  print("Sukses Pesan");
+                },
+              )
+            ],
           ),
-          ContentDetail(
-            title: "Gunung Ciremai",
-            location: "Jawa Barat, Indonesia",
-            description: descriptionText,
-            price: 75,
-            onPress: () {
-              print("Sukses Pesan");
-            },
-          )
-        ],
+        ),
       ),
     );
   }

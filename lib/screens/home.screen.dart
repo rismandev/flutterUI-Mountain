@@ -3,19 +3,38 @@ import 'package:mountain_app/widgets/home/popularlist.widget.dart';
 import 'package:mountain_app/widgets/home/provincelist.widget.dart';
 import 'package:mountain_app/widgets/home/recentlist.widget.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool isSearch = false;
+
+  void clickSearch() {
+    setState(() {
+      isSearch = !this.isSearch;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: buildAppBar(size),
-      body: Column(
-        children: <Widget>[
-          ProvinceList(),
-          RecentList(),
-          PopularList(),
-        ],
+      body: SingleChildScrollView(
+        child: Container(
+          width: size.width,
+          height: size.height,
+          child: Column(
+            children: <Widget>[
+              ProvinceList(),
+              RecentList(),
+              PopularList(),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -32,22 +51,29 @@ class HomeScreen extends StatelessWidget {
         ),
         onPressed: () {},
       ),
-      title: Text(
-        "Pendaki",
-        style: TextStyle(
-          fontSize: size.width * 0.06,
-          color: Colors.black.withOpacity(0.7),
-          fontWeight: FontWeight.bold,
-        ),
+      title: Container(
+        child: this.isSearch
+            ? TextField(
+                decoration: InputDecoration(
+                    border: InputBorder.none, hintText: "Apa yang kamu cari?"),
+              )
+            : Text(
+                "Pendaki",
+                style: TextStyle(
+                  fontSize: size.width * 0.06,
+                  color: Colors.black.withOpacity(0.7),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
       ),
       centerTitle: true,
       actions: <Widget>[
         IconButton(
           alignment: Alignment.center,
           highlightColor: Colors.green.withOpacity(0.2),
-          onPressed: () {},
+          onPressed: this.clickSearch,
           icon: Icon(
-            Icons.search,
+            this.isSearch ? Icons.close : Icons.search,
             color: Colors.black,
           ),
         )

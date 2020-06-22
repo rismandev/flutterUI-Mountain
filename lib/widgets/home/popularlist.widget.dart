@@ -14,34 +14,29 @@ class _PopularListState extends State<PopularList> {
     Size size = MediaQuery.of(context).size;
     return Expanded(
       flex: 1,
-      child: Container(
-        width: double.infinity,
-        color: Colors.white,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(left: 15, right: 15, top: 15),
-              child: Text(
-                "Tempat populer",
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: size.width * 0.045,
-                ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 5),
+            child: Text(
+              "Tempat populer",
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: size.width * 0.045,
               ),
             ),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              height: size.height / 2,
-              color: Colors.white,
-              child: ListView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: recents.length,
-                itemBuilder: (context, index) => buildPopularCard(index),
-              ),
+          ),
+          Expanded(
+            flex: 1,
+            child: ListView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: recents.length,
+              itemBuilder: (context, index) => buildPopularCard(index),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
