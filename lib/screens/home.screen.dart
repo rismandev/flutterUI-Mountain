@@ -10,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool isSearch = false;
+  String searchValue = '';
 
   void clickSearch() {
     setState(() {
@@ -54,8 +55,15 @@ class _HomeScreenState extends State<HomeScreen> {
       title: Container(
         child: this.isSearch
             ? TextField(
+                onChanged: (value) {
+                  setState(() {
+                    searchValue = value;
+                  });
+                },
                 decoration: InputDecoration(
-                    border: InputBorder.none, hintText: "Apa yang kamu cari?"),
+                  border: InputBorder.none,
+                  hintText: "Apa yang kamu cari?",
+                ),
               )
             : Text(
                 "Pendaki",
