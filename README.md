@@ -1,6 +1,6 @@
-# mountain_app
+# Flutter UI - Mountain
 
-A new Flutter project.
+Simple Flutter UI for Mountain App.
 
 ## Getting Started
 
@@ -14,3 +14,35 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Clone
+
+```
+git clone https://github.com/rismandev/flutterUI-Mountain.git
+```
+
+## Contributtors
+
+<img src="https://github.com/rismandev/kost/blob/master/src/assets/demo/me.jpg" width="100" alt=""/>
+
+Risman Abdilah
+
+## Connect with me
+
+<div>
+    <a href="tell:089647329246" target="_blank">
+        <img src="https://github.com/rismandev/flutterUI_authentication/blob/master/assets/connect/whatsapp.png" width="50" height="50" alt=""/>
+    </a>
+    &nbsp;
+    <a href="https://www.linkedin.com/in/rismandev" target="_blank">
+        <img src="https://github.com/rismandev/flutterUI_authentication/blob/master/assets/connect/linkedin.png" width="50" height="50" alt=""/>
+    </a>
+    &nbsp;
+    <a href="https://www.facebook.com/risman.abdilah.58" target="_blank">
+        <img src="https://github.com/rismandev/flutterUI_authentication/blob/master/assets/connect/facebook.png" width="50" height="50" alt=""/>
+    </a>
+    &nbsp;
+    <a href="https://www.instagram.com/rismandev" target="_blank">
+        <img src="https://github.com/rismandev/flutterUI_authentication/blob/master/assets/connect/instagram.png" width="50" height="50" alt=""/>
+    </a>
+</div>
