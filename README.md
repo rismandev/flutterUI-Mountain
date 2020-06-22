@@ -2,6 +2,8 @@
 
 Simple Flutter UI for Mountain App.
 
+<img src="assets/demo_mountain_app.png" alt="Enter Table Number Empty"/>
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
