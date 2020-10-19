@@ -5,18 +5,22 @@ import 'package:mountain_app/widgets/buttons/bookmark.button.dart';
 class PopularCard extends StatelessWidget {
   final Mountain recent;
   final Function onPress;
+  final Function onSaved;
+  final bool isSaved;
 
   const PopularCard({
     Key key,
     @required this.recent,
     @required this.onPress,
+    this.onSaved,
+    this.isSaved = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: this.onPress,
-          child: Container(
+      child: Container(
         margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
@@ -37,12 +41,16 @@ class PopularCard extends StatelessWidget {
               imageSource: recent.image,
             ),
             BookmarkButton(
-              active: recent.isSaved,
-              onPress: () {},
+              active: this.isSaved,
+              onPress: this.onSaved,
               top: 5,
               right: 5,
             ),
-            ContentCard(title: recent.title, location: recent.location, description: recent.description,),
+            ContentCard(
+              title: recent.title,
+              location: recent.location,
+              description: recent.description,
+            ),
           ],
         ),
       ),
@@ -110,6 +118,7 @@ class ContentCard extends StatelessWidget {
     );
   }
 }
+
 // Widget Image List
 class ImageCard extends StatelessWidget {
   final String imageSource;

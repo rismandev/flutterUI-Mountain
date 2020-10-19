@@ -12,33 +12,33 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          ImageHeader(
-            imageSource: "assets/images/header.jpg",
-          ),
-          ContentWelcome(),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: GradientButton(
-              text: "Mulai sekarang!",
-              onPress: () {
-                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
-                  builder: (context) {
-                    return HomeScreen();
-                  },
-                ), (route) => false);
-              },
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            ImageHeader(
+              imageSource: "assets/images/header.jpg",
             ),
-          ),
-        ],
+            ContentWelcome(),
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 0, 0, 30),
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: GradientButton(
+                text: "Mulai sekarang!",
+                onPress: () {
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+                    builder: (context) {
+                      return HomeScreen();
+                    },
+                  ), (route) => false);
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
-

@@ -29,7 +29,7 @@ class BookmarkButton extends StatelessWidget {
         ),
         alignment: Alignment.center,
         child: IconButton(
-          splashColor: Colors.orange.withOpacity(0.4),
+          splashColor: Colors.transparent,
           icon: SvgPicture.asset(
             "assets/icons/heart.svg",
             color: active ? Colors.red : Colors.black.withOpacity(0.6),

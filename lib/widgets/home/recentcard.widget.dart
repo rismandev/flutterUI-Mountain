@@ -3,15 +3,18 @@ import 'package:mountain_app/models/mountain.model.dart';
 import 'package:mountain_app/widgets/buttons/bookmark.button.dart';
 
 class RecentCard extends StatelessWidget {
+  final Mountain recent;
   final Function onPress;
+  final Function onSaved;
+  final bool isSaved;
 
   const RecentCard({
     Key key,
     @required this.recent,
     @required this.onPress,
+    this.onSaved,
+    this.isSaved = false,
   }) : super(key: key);
-
-  final Mountain recent;
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +38,8 @@ class RecentCard extends StatelessWidget {
           children: <Widget>[
             BackgroundImage(image: recent.image),
             BookmarkButton(
-              active: recent.isSaved,
-              onPress: () {
-                print("bookmarked");
-              },
+              active: this.isSaved,
+              onPress: this.onSaved,
             ),
             TextRecent(
               size: size,

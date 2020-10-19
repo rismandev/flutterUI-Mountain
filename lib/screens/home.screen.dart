@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mountain_app/models/mountain.model.dart';
 import 'package:mountain_app/widgets/home/popularlist.widget.dart';
 import 'package:mountain_app/widgets/home/provincelist.widget.dart';
 import 'package:mountain_app/widgets/home/recentlist.widget.dart';
@@ -31,8 +32,12 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: <Widget>[
               ProvinceList(),
-              RecentList(),
-              PopularList(),
+              RecentList(
+                listRecent: recents,
+              ),
+              PopularList(
+                listPopular: recents,
+              ),
             ],
           ),
         ),

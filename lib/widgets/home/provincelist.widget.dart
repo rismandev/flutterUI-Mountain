@@ -38,7 +38,7 @@ class _ProvinceListState extends State<ProvinceList> {
             indexOfProvince = index;
           });
         },
-              child: Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
@@ -54,11 +54,10 @@ class _ProvinceListState extends State<ProvinceList> {
               width: 50,
               height: 5,
               decoration: BoxDecoration(
-                color:
-                    index == indexOfProvince ? Colors.black : Colors.transparent,
-                borderRadius: BorderRadius.circular(
-                  6,
-                ),
+                color: index == indexOfProvince
+                    ? Colors.black
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(6),
               ),
             ),
           ],
