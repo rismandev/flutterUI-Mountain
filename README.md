@@ -25,7 +25,7 @@ git clone https://github.com/rismandev/flutterUI-Mountain.git
 
 ## Contributtors
 
-<img src="https://github.com/rismandev/kost/blob/master/src/assets/demo/me.jpg" width="100" alt=""/>
+<img src="https://avatars.githubusercontent.com/u/42364962?v=4" width="120px" height="120px" alt="Avatar" />
 
 Risman Abdilah
 
